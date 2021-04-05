@@ -1,16 +1,20 @@
 #!/bin/bash
 # Define resolution
 resolution = 'lowres'
+gpu_id='-1'  # uses CPU by default
 # Run all available datasets
-python -W ignore .\rbm_train_main.py -d aurum -r resolution -lc True -fc True -wm True # aurum
-python -W ignore .\rbm_train_main.py -d iprg -r resolution -lc True -fc True -wm True # iprg
-python -W ignore .\rbm_train_main.py -d hspp2a -r resolution -lc True -fc True -wm True # hspp2a
-python -W ignore .\rbm_train_main.py -d humvar -r resolution -lc True -fc True -wm True # humvar
-python -W ignore .\rbm_train_main.py -d malaria -r resolution -lc True -fc True -wm True # malaria
-python -W ignore .\rbm_train_main.py -d yeast -r resolution -lc True -fc True -wm True # yeast
+
+python -W ignore ./run.py chopin $resolution $gpu_id
+python -W ignore ./run.py hela $resolution $gpu_id
+python -W ignore ./run.py iprg $resolution $gpu_id
+python -W ignore ./run.py humvar $resolution $gpu_id
+python -W ignore ./run.py malaria $resolution $gpu_id
 
 resolution = 'highres'
-# Run BoltzMatch using high-res settings
-python -W ignore .\rbm_train_main.py -d iprg -r resolution -lc True -fc True -wm True # iprg
-python -W ignore .\rbm_train_main.py -d humvar -r resolution -lc True -fc True -wm True # humvar
-python -W ignore .\rbm_train_main.py -d malaria -r resolution -lc True -fc True -wm True # malaria
+# Run all available datasets
+
+python -W ignore ./run.py chopin $resolution $gpu_id
+python -W ignore ./run.py hela $resolution $gpu_id
+python -W ignore ./run.py iprg $resolution $gpu_id
+python -W ignore ./run.py humvar $resolution $gpu_id
+python -W ignore ./run.py malaria $resolution $gpu_id
