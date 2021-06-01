@@ -21,7 +21,9 @@ and other standard python toolboxes such as:
 argparse, time, numpy, seaborn, pandas, etc.
 
 ## SMOKE TEST
-To see whether all components are installed properly, run:
+To see whether all components are installed properly, first unzip the test data.zip file in the ./data folder locally.
+
+Then run:
 
 $./RUN_TEST.sh
 
@@ -30,12 +32,14 @@ If this terminates without error, you are all set.
 
 The python scripts will produce a transformed spectrum data file in .ms2 format. You can use standard database searching methods to search the transformed .ms2 data file.
 
-## REPRODUCE OUR EXPERIMENTS
-1. 
+## PARAMETERS
+
+The ./source/parameters.py file contains all the parameters, including to the path to the data files. You need to modify the path to your data files in own system.
 
 ## Contact:
 
-It will be added later.
+akerteszfarkas at hse . r u
+
 
 
 
